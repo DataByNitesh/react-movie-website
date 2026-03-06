@@ -1,0 +1,134 @@
+.home {
+  padding: 3rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-form {
+  max-width: 650px;
+  margin: 0 auto 3rem;
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  background: rgba(25, 25, 35, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  font-size: 1.1rem;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: rgba(255, 42, 95, 0.5);
+  background: rgba(25, 25, 35, 0.8);
+  box-shadow: 0 0 20px rgba(255, 42, 95, 0.15);
+}
+
+.search-button {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--primary-accent) 0%, #b92b27 100%);
+  color: white;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  font-family: 'Space Grotesk', sans-serif;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(229, 9, 20, 0.3);
+}
+
+.search-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(229, 9, 20, 0.4);
+}
+
+.loading,
+.loading-more {
+  text-align: center;
+  color: var(--primary-accent);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 2rem 0;
+  padding: 1rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 639px) {
+  .home {
+    padding: 2rem 0;
+  }
+
+  .search-form {
+    margin-bottom: 2rem;
+  }
+
+  .search-input {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .search-button {
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+}
