@@ -1,8 +1,8 @@
-const API_URL = '/api/auth';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:9000/api';
+const API_URL = '/auth';
 
 const register = async (userData) => {
-    // using Vite proxy or full URL
-    const response = await fetch(`http://localhost:9000${API_URL}/register`, {
+    const response = await fetch(`${BASE_URL}${API_URL}/register`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -24,7 +24,7 @@ const register = async (userData) => {
 };
 
 const login = async (userData) => {
-    const response = await fetch(`http://localhost:9000${API_URL}/login`, {
+    const response = await fetch(`${BASE_URL}${API_URL}/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
