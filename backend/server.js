@@ -18,6 +18,10 @@ connectDB();
 app.use('/api/auth', authRoutes)
 app.use('/api/movies', movieRoutes)
 
+app.get('/', (req, res) => {
+  res.send('Backend is running successfully!');
+});
+
 
 //.server
 const port = process.env.PORT || 9000;
